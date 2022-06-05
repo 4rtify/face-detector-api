@@ -11,10 +11,8 @@ import { handleProfile } from "./controllers/profile.js";
 const db = knex({
     client: 'pg',
     connection: {
-        host: '127.0.0.1',
-        user: 'postgres',
-        password: 'test',
-        database: 'face-detector'
+        host: process.env.DATABASE_URL,
+        ssl: true,
     }
 });
 
